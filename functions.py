@@ -1,5 +1,6 @@
 import random
 
+
 def load_quotes(filename):
     quotes = []
     with open(filename, 'r') as file:
@@ -10,25 +11,30 @@ def load_quotes(filename):
             quotes.append(line)
     return quotes
 
+
 def random_quote(quotes):
     random_quote = random.choice(quotes)
     return random_quote
 
+
 def print_quote(quote):
     print(quote)
+
 
 def view_quotes(quotes):
     for quote in quotes:
         print_quote(quote)
 
+
 def add_quote(quotes, filename):
     new_quote = input("Enter a new quote: ")
     quotes.append(new_quote)
-    
+
     with open(filename, 'a') as file:
         file.write('\n')
         file.write(new_quote)
-        
+
+
 def display_quotes(quotes, count):
     if count >= len(quotes):
         print("All Quotes:")
